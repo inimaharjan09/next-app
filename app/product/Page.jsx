@@ -12,7 +12,6 @@ export default function Page() {
           </Link>
           <div className='h-[100px] w-[100px] bg-purple-500'></div>
           <div className='h-[100px] w-[100px] bg-blue-500'></div>
-        
       </div>
     </div>
   )

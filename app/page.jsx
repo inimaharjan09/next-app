@@ -1,12 +1,15 @@
 import React from 'react'
-import Navigation from './_components/Navigation'
+import Navigation from './_components/Navigation.jsx'
+import Client from './_components/Client.jsx'
 
 export default function Page() {
   return (
     <div>
-      <h1>This is Homepage</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid obcaecati sapiente aperiam fugiat consequatur atque veritatis quibusdam, nihil esse quod, laboriosam temporibus minima, quas quaerat quisquam blanditiis aliquam numquam ex?</p>
+    
  <Navigation/>
+
+
+ {/* <Client/> */}
 
     </div>
   )

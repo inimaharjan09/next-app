@@ -1,4 +1,6 @@
-import { useRouter } from 'next/router'
+'use client'
+
+import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 
 export default function Client() {
@@ -7,7 +9,7 @@ export default function Client() {
   return (
     <div>
         <h1>Hello jee Client components</h1>
-        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus, natus voluptatum eum voluptate enim vitae rem. Dolorem similique laboriosam doloribus, fugit ut sint magni cumque natus voluptatem, officiis, voluptas quas!</p>
+       <button onClick={() => router.push('/product')}>Go to Product Page</button>
         
       
     </div>
