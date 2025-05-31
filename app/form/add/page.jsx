@@ -1,27 +1,59 @@
-'use client'
-import React, { useActionState } from 'react'
+'use client';
+import { Formik } from 'formik'
+import React, { useTransition } from 'react'
+import { addData } from '../../_lib/action';
+import toast from 'react-hot-toast';
 
-const handleSubmit = async (prevState, formData) => {
-    console.log(formData);
 
-}
 export default function Page() {
-    const [ state, formAction, isPending] = useActionState(handleSubmit, null);
-  
+  const [isLoading, setTransition] = useTransition();
+
   return (
     <div>
-        <form action = { formAction } className='space-y-4'>
-          <div>
-              <input name='title' type='text' placeholder='Title' className='border-2 border-red-500 px-2'>
-            </input>
-          </div>
+      <Formik
+        initialValues={{
+          title: '',
+          body: ''
+        }}
+        onSubmit={(val, { resetForm }) => {
+          setTransition(async () => {
+            const { error, message } = await addData(val);
+            if (error) {
+              toast.error(message);
+            } else {
+              toast.success('Data added successfully');
 
-          <div>
-              <input name='body' type='text' placeholder='Body' className='border-2 border-red-500 px-2'>
-            </input>
-          </div>
-          <button type='submit' className='my-2 bg-blue-500 px-2 py-1'>Submit</button>
-        </form>   
+            }
+
+          })
+        }}
+      >
+        {({ handleChange, handleSubmit, values }) => (
+          <form onSubmit={handleSubmit} className='space-y-4'>
+            <div>
+              <input
+                onChange={handleChange}
+                value={values.title}
+                name='title'
+                type="text" placeholder='Title' className='border-2 border-red-500 px-2' />
+
+            </div>
+            <div>
+              <input
+                onChange={handleChange}
+                value={values.body}
+                name='body'
+                type="text" placeholder='Body' className='border-2 border-red-500 px-2' />
+
+            </div>
+
+            {isLoading ? <h1>Loading...</h1> :
+              <button type='submit' className='my-2 bg-blue-500 px-2 py-1'>Submit</button>}
+          </form>
+        )}
+      </Formik>
+
+
     </div>
   )
 }

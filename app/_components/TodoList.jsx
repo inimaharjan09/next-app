@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react'
+import RemoveTodo from './RemoveTodo';
 
 export default async function TodoList() {
     const response = await axios.get('https://683a849a43bb370a8672ea61.mockapi.io/todos');
@@ -8,9 +9,10 @@ export default async function TodoList() {
   return (
     <div>
         {todos.map((todo) => (
-            <div key={todo.id}>
+            <div key={todo.id} className='shadow-2xl max-w-[300px] p-5'>
                 <h1>{todo.title}</h1>
                 <p>{todo.body}</p>
+                <RemoveTodo id={todo.id}/>
                 </div>
         ))}
         
