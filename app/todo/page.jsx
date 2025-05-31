@@ -1,16 +1,21 @@
 import React, { Suspense } from 'react'
 import TodoList from '../_components/TodoList'
+import Link from 'next/link'
+
 
 export default function Page() {
   return (
     <div>
         <h1 className='text-red-500 font-bold'>Welcome to Todo Page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi hic dolor corrupti omnis, consequatur dolores maiores molestias minus aspernatur quasi voluptatum optio, amet nulla. Sed officia maxime similique quia tempore!</p>
+        <Link href={'/form/add'}>
+        <button className='my-2 bg-blue-500 py-1'> Add Todo </button>
+        </Link>
+        
         <Suspense fallback = {<h1>Loading.....</h1>}>
               <TodoList/>
         </Suspense>
       
       
     </div>
-  )
+  ) 
 }
