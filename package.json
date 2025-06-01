@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prod": "npm run build && npm start"
+    "prod": "next build && next start"
   },
   "dependencies": {
     "@material-tailwind/react": "^2.1.10",

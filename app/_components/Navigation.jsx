@@ -4,10 +4,11 @@ import React from 'react'
 export default function Navigation() {
   return (
     <div className='space-x-5'>
-        <Link href={'/about'}>About</Link>
+        <Link href={'/posts'} className='font-bold'>Posts</Link>
         <Link href={'/contact'}>Contact</Link>
-        <Link href={'/product'}>Product Page</Link>
-        <Link href={'/todo'}>Todo Page</Link>
+        <Link href={'/product'} className='font-bold'>Product Page</Link>
+        <Link href={'/todo'} className='font-bold'>Todo Page</Link>
+
     </div>
   )
 }

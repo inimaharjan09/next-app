@@ -5,6 +5,18 @@ import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
 
 
+export async function getPosts(val) {
+  try {
+
+    const response = await axios.get('https://683a849a43bb370a8672ea61.mockapi.io/posts');
+
+    return { success: true, posts: response.data };
+  } catch (err) {
+    return { error: true, message: err.message };
+  }
+}
+
+
 export async function addData(val) {
   try {
 
