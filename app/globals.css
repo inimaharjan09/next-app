@@ -1,2 +1,8 @@
 @import "tailwindcss";
 @config "../tailwind.config.js";
+
+@layer base {
+  button {
+    @apply cursor-pointer;
+  }
+}

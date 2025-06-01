@@ -19,6 +19,20 @@ export async function addData(val) {
   redirect('/todo');
 }
 
+export async function editData(val) {
+  try {
+
+    await axios.patch(`https://683a849a43bb370a8672ea61.mockapi.io/todos/${val.id}`, val.body);
+
+    revalidatePath('/todo');
+
+    return { error: false, message: 'Data updated successfully' };
+  } catch (err) {
+    return { error: true, message: err.message };
+  }
+
+  
+}
 
 
 export async function removeTodo(id) {
