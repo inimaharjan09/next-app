@@ -6,6 +6,7 @@ import { redirect } from "next/navigation";
 
 
 export async function getPosts(val) {
+  no
   try {
 
     const response = await axios.get('https://683a849a43bb370a8672ea61.mockapi.io/posts');

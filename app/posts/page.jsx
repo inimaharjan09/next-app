@@ -1,6 +1,8 @@
 import React from 'react'
 import { getPosts } from '../_lib/action'
 
+export const revalidate = 0;
+
 export default async function Page() {
     const { posts } = await getPosts();
     
