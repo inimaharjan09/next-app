@@ -4,7 +4,7 @@ import RemoveTodo from './RemoveTodo';
 import Link from 'next/link';
 
 export default async function TodoList() {
-    const response = await axios.get('https://683a849a43bb370a8672ea61.mockapi.io/todos');
+    const response = await axios.get('https://683a849a43bb370a8672ea61.mockapi.io/tod');
     const todos = response.data;
 
   return (
